@@ -29,6 +29,7 @@
          background-color: #89a9eb  
    &__main-text
       display: block
+      margin-right: 15px
       margin-bottom: 5px
       font-size: 18px
       text-transform: uppercase
@@ -37,6 +38,7 @@
       +bold
    &__sub-text
       display: block
+      margin-right: 15px
       text-align: right
       font-size: 14px
       color: $subtext-color
@@ -73,3 +75,42 @@
       text-decoration: none
       text-transform: uppercase
       color: #ffffff
+
+@media (max-width: 1200px)
+   .navbar
+      &__logo
+         flex-basis: 250px
+         
+@media (max-width: 992px)
+   .navbar
+      &__wrap
+         justify-content: space-between
+      &__logo
+         flex-basis: 200px
+         &_main-text
+            font-size: 16px
+         &_sub-text
+            font-size: 12px
+      &__main-text
+         font-size: 14px
+      &__sub-text
+         font-size: 12px
+      &__menu-button
+         width: 60px
+         height: 60px
+         margin-right: 10px
+
+@media (max-width: 768px)
+   .navbar
+      &__menu-button
+      &__sub-text, &__main-text
+         display: none
+
+@media (max-width: 480px)
+   .navbar
+      &__logo
+         &_main-text
+            font-size: 16px
+         &_sub-text
+            display: none
+   

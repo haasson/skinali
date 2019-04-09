@@ -1,5 +1,5 @@
 .hero
-   background: #1D1F20 url('../img/hero/hero_bg.png') no-repeat center
+   background: #fff url('../img/hero/hero-bg.jpg') no-repeat center 
    background-size: cover
    margin-top: 80px
    padding-top: 120px
@@ -8,10 +8,50 @@
       max-width: 300px
       margin-bottom: 40px
       font-size: 30px
-      color: #fff
+      color: $text-color
    &__subtitle
       display: block
       margin-bottom: 65px
-      color: #ffffff
+      color: $text-color
       font-size: 30px
       +bold
+
+@media (max-width: 1200px)
+   .hero
+      padding-top: 80px
+      padding-bottom: 200px
+
+@media (max-width: 992px)
+   .hero
+      padding-top: 60px
+      padding-bottom: 150px
+
+@media (max-width: 768px)
+   .hero
+      padding-top: 40px
+      padding-bottom: 70px
+      &__title
+         max-width: 250px
+         margin-bottom: 25px
+         font-size: 28px
+      &__subtitle
+         margin-bottom: 45px
+         font-size: 28px
+
+@media (max-width: 480px)
+   .hero
+      padding-top: 120px
+      padding-bottom: 40px
+      background-position: -360px 0
+      &__title
+         max-width: 100%
+         margin-bottom: 25px
+         text-align: center
+         font-size: 28px
+      &__subtitle
+         margin-bottom: 45px
+         text-align: center
+         font-size: 28px
+   .button 
+      display: block 
+      margin: 0 auto

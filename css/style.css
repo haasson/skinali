@@ -1,5 +1,6 @@
 .container {
   max-width: 1170px;
+  width: 95%;
   margin: auto;
 }
 
@@ -44,6 +45,30 @@ body {
   color: #ffffff;
   font-family: 'Proxima Nova Semibold', sans-serif;
   text-transform: uppercase;
+}
+
+@media (max-width: 1200px) {
+  .button-o {
+    padding: 17px 5px;
+  }
+}
+
+@media (max-width: 992px) {
+  .button-o {
+    width: 20%;
+  }
+}
+
+@media (max-width: 768px) {
+  .button-o {
+    width: 40%;
+  }
+}
+
+@media (max-width: 480px) {
+  .button-o {
+    max-width: 50%;
+  }
 }
 
 .navbar {
@@ -100,6 +125,7 @@ body {
 
 .navbar__main-text {
   display: block;
+  margin-right: 15px;
   margin-bottom: 5px;
   font-size: 18px;
   text-transform: uppercase;
@@ -110,6 +136,7 @@ body {
 
 .navbar__sub-text {
   display: block;
+  margin-right: 15px;
   text-align: right;
   font-size: 14px;
   color: #6b6b6b;
@@ -165,8 +192,59 @@ body {
   color: #ffffff;
 }
 
+@media (max-width: 1200px) {
+  .navbar__logo {
+    -ms-flex-preferred-size: 250px;
+        flex-basis: 250px;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar__wrap {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .navbar__logo {
+    -ms-flex-preferred-size: 200px;
+        flex-basis: 200px;
+  }
+  .navbar__logo_main-text {
+    font-size: 16px;
+  }
+  .navbar__logo_sub-text {
+    font-size: 12px;
+  }
+  .navbar__main-text {
+    font-size: 14px;
+  }
+  .navbar__sub-text {
+    font-size: 12px;
+  }
+  .navbar__menu-button {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar__sub-text, .navbar__main-text {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar__logo_main-text {
+    font-size: 16px;
+  }
+  .navbar__logo_sub-text {
+    display: none;
+  }
+}
+
 .hero {
-  background: #1D1F20 url("../img/hero/hero_bg.png") no-repeat center;
+  background: #fff url("../img/hero/hero-bg.jpg") no-repeat center;
   background-size: cover;
   margin-top: 80px;
   padding-top: 120px;
@@ -177,14 +255,67 @@ body {
   max-width: 300px;
   margin-bottom: 40px;
   font-size: 30px;
-  color: #fff;
+  color: #262626;
 }
 
 .hero__subtitle {
   display: block;
   margin-bottom: 65px;
-  color: #ffffff;
+  color: #262626;
   font-size: 30px;
   font-family: 'Proxima Nova Semibold', sans-serif;
+}
+
+@media (max-width: 1200px) {
+  .hero {
+    padding-top: 80px;
+    padding-bottom: 200px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero {
+    padding-top: 60px;
+    padding-bottom: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 40px;
+    padding-bottom: 70px;
+  }
+  .hero__title {
+    max-width: 250px;
+    margin-bottom: 25px;
+    font-size: 28px;
+  }
+  .hero__subtitle {
+    margin-bottom: 45px;
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 120px;
+    padding-bottom: 40px;
+    background-position: -360px 0;
+  }
+  .hero__title {
+    max-width: 100%;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 28px;
+  }
+  .hero__subtitle {
+    margin-bottom: 45px;
+    text-align: center;
+    font-size: 28px;
+  }
+  .button {
+    display: block;
+    margin: 0 auto;
+  }
 }
 /*# sourceMappingURL=style.css.map */
