@@ -1,0 +1,75 @@
+.navbar
+   position: fixed
+   left: 0
+   top: 0
+   width: 100%
+   background-color: #fff
+   &__wrap
+      min-height: 80px
+      display: flex
+      justify-content: space-between
+      align-items: center
+   &__menu-button
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      margin-right: 30px
+      height: 80px
+      width: 90px
+      background-color: transparent
+      border: none
+      border-right: 1px solid rgba(#510bba, 0.1)
+      border-left: 1px solid rgba(#510bba, 0.1)
+      &_line
+         display: block
+         margin: 4px 0
+         width: 25px
+         height: 3px
+         background-color: #89a9eb  
+   &__main-text
+      display: block
+      margin-bottom: 5px
+      font-size: 18px
+      text-transform: uppercase
+      text-decoration: none
+      color: $text-color
+      +bold
+   &__sub-text
+      display: block
+      text-align: right
+      font-size: 14px
+      color: $subtext-color
+   &__logo
+      flex-basis: 400px
+      &_main-text
+         display: block
+         margin-bottom: 5px
+         font-size: 18px
+         text-transform: uppercase
+         text-decoration: none
+         color: $text-color
+         +bold
+      &_sub-text
+         display: block
+         font-size: 14px
+         color: $subtext-color
+.menu
+   position: fixed
+   top: 80px 
+   left: 0
+   width: 100%
+   padding: 16px 0
+   background-color: $primary
+   transition: 0.2
+   transform: translateY(-300px)
+   
+   &__nav
+      display: flex
+      justify-content: space-between
+      
+   &__link
+      font-size: 17px
+      text-decoration: none
+      text-transform: uppercase
+      color: #ffffff
