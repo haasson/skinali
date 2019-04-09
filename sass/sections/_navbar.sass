@@ -64,12 +64,14 @@
    padding: 16px 0
    background-color: $primary
    transition: 0.2
-   transform: translateY(-300px)
-   
+   transform: translateY(-400px)
+   opacity: 0
+   &__active
+      transform: translateY(0)
+      opacity: 1
    &__nav
       display: flex
-      justify-content: space-between
-      
+      justify-content: space-between 
    &__link
       font-size: 17px
       text-decoration: none
@@ -80,6 +82,10 @@
    .navbar
       &__logo
          flex-basis: 250px
+   .menu
+      padding: 12px 0
+      &__link
+         font-size: 15px
          
 @media (max-width: 992px)
    .navbar
@@ -99,12 +105,23 @@
          width: 60px
          height: 60px
          margin-right: 10px
+   .menu
+      &__link
+         font-size: 12px
 
 @media (max-width: 768px)
    .navbar
       &__menu-button
       &__sub-text, &__main-text
          display: none
+   .menu
+      &__nav
+         flex-direction: column
+         align-items: center
+         height: 200px
+      &__link
+         font-size: 14px
+         
 
 @media (max-width: 480px)
    .navbar
