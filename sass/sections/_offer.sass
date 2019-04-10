@@ -1,0 +1,103 @@
+.offer
+   position: relative
+   min-height: 400px
+   padding-bottom: 130px
+   background-color: $bg-secondary
+   &__block
+      box-sizing: border-box
+      position: absolute
+      top: -120px
+      width: 95%
+      max-width: 1170px
+      padding: 80px
+      background: #fff url('../img/offer/bg-form.jpg') no-repeat center right
+      background-size: contain
+   &__title
+      font-size: 25px
+      text-transform: uppercase
+      +bold
+   &__subtitle
+      display: block
+      margin-bottom: 45px
+      font-size: 20px
+
+.form
+   &__row
+      display: flex
+      align-items: center
+      max-width: 900px
+      margin-bottom: 25px
+      &:last-child
+         margin-bottom: 0
+   &__label 
+      display: block
+      margin-bottom: 15px
+      font-size: 17px
+   &__group
+      flex-basis: 33.3%
+   &__input
+      box-sizing: border-box
+      height: 80px
+      width: 100%
+      padding: 0 20px
+      border: 1px solid #dddddd
+      border-right: none
+   &__button
+      height: 80px
+      width: 100%
+   &__row:first-child .form__group:last-child .form__input, &__row:last-child .form__group:nth-child(2) .form__input
+      border-right: 1px solid #dddddd
+
+@media (max-width: 1200px)
+   .offer
+      &__block
+         box-sizing: border-box
+         width: 95%
+         padding: 60px
+         background-position: center right -60px
+
+@media (max-width: 992px)
+   .offer
+      position: static
+      padding-top: 30px
+      &__block
+         position: static
+         padding: 20px 40px
+         margin: 0 auto
+         width: 90%
+         background-image: none
+   .form
+      &__input
+         height: 60px
+      &__row:last-child
+         flex-wrap: wrap
+         justify-content: center
+         & .form
+            &__group
+               flex-basis: 50%
+            &__input
+               margin-bottom: 20px
+
+@media (max-width: 768px)
+   .offer
+      &__block
+         padding: 15px 30px
+      &__title
+         text-align: center
+         font-size: 20px
+      &__subtitle
+         text-align: center
+         margin-bottom: 30px
+         font-size: 18px
+   .form
+      &__row
+         flex-direction: column
+         align-items: stretch
+         &:nth-child(2)
+            flex-direction: row
+            margin-bottom: 35px
+      &__group
+         flex-basis: 100%
+         margin-bottom: 15px
+      &__input
+         border: 1px solid #dddddd

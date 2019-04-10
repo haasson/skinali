@@ -13,13 +13,51 @@ body
    text-transform: uppercase
 
 .button
-   padding: 25px 45px
+   padding: 20px 45px
    border: none
    background-color: $primary
    font-size: 15px
    color: #ffffff
    +bold
    text-transform: uppercase
+
+.form__checkbox 
+   & input[type="checkbox"]
+      opacity: 0
+      &+label::after
+         content: none
+      &:checked+label::after
+         content: ""
+         transition: 0.5
+      &:focus+label::before
+         outline: rgb(59, 123, 252) auto 5px
+   & label
+      position: relative
+      margin-left: 20px
+      margin-right: 40px
+      &::before
+         position: absolute
+         top: -5px
+         left: -37px
+         content: ''
+         display: inline-block
+         width: 30px
+         height: 30px
+         border: 1px solid #dddddd
+      &::after
+         position: absolute
+         top: 0px
+         left: -32px
+         content: ""
+         display: inline-block
+         height: 12px
+         width: 18px
+         border-left: 4px solid $primary
+         border-bottom: 4px solid $primary
+         transform: rotate(-45deg)
+   
+   
+   
 
 @media (max-width: 1200px)
    .button-o
