@@ -6,7 +6,6 @@
    width: 100%
    background-color: #fff
    &__wrap
-      min-height: 80px
       display: flex
       justify-content: space-between
       align-items: center
@@ -16,7 +15,7 @@
       align-items: center
       justify-content: center
       margin-right: 30px
-      height: 80px
+      min-height: 80px
       width: 90px
       background-color: transparent
       border: none
@@ -83,6 +82,8 @@
    .navbar
       &__logo
          flex-basis: 250px
+      &__button
+         padding: 17px 5px
    .menu
       padding: 12px 0
       &__link
@@ -104,17 +105,23 @@
          font-size: 12px
       &__menu-button
          width: 60px
-         height: 60px
+         min-height: 60px
          margin-right: 10px
+      &__button
+         width: 20%
+         padding: 10px 5px
    .menu
       &__link
          font-size: 12px
 
 @media (max-width: 768px)
    .navbar
+      position: static
       &__menu-button
       &__sub-text, &__main-text
          display: none
+      &__button
+          width: 40%
    .menu
       &__nav
          flex-direction: column
@@ -126,9 +133,13 @@
 
 @media (max-width: 480px)
    .navbar
+      &__menu-button
+         border: none
       &__logo
+         margin-right: 10px
          &_main-text
             font-size: 16px
          &_sub-text
             display: none
-   
+      &__button
+         max-width: 50%
