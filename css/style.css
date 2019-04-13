@@ -28,6 +28,8 @@ body {
 }
 
 img {
+  display: block;
+  margin: auto;
   max-width: 100%;
 }
 
@@ -149,6 +151,7 @@ img {
   z-index: 10;
   width: 100%;
   background-color: #fff;
+  border-bottom: 1px solid rgba(81, 11, 186, 0.1);
 }
 
 .navbar__wrap {
@@ -643,5 +646,73 @@ img {
         flex-basis: 100%;
     margin-bottom: 30px;
   }
+}
+
+.catalog {
+  background-color: #f7f4ed;
+}
+
+.catalog__cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.catalog__item {
+  position: relative;
+  max-width: 570px;
+  margin: 5px;
+}
+
+.catalog__tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 10px;
+  background-color: rgba(80, 127, 225, 0.6);
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: 'Proxima Nova Semibold', sans-serif;
+}
+
+.catalog__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  opacity: 0.9;
+}
+
+.catalog__button {
+  padding: 10px;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-family: 'Proxima Nova Semibold', sans-serif;
+}
+
+.catalog__button_fitting {
+  background-color: #fff;
+  color: #507fe1;
+}
+
+.catalog__button_order {
+  background-color: #7c9fe8;
+  color: #ffffff;
+}
+
+.catalog__button_like {
+  background-color: #507fe1;
+}
+
+.catalog__button_like img {
+  height: 20px;
+  width: 20px;
 }
 /*# sourceMappingURL=style.css.map */
