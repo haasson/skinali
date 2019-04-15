@@ -1,0 +1,46 @@
+.steps
+   &__list
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+   &__item
+      position: relative
+      text-align: center
+      &:before
+         content: ""
+         display: block
+         position: absolute
+         top: 18%
+         left: 59%
+         height: 2px
+         width: 100%
+         background-color: #ccc
+      &:last-child
+         &:before
+            display: none
+   &__title
+      font-size: 20px
+   &__text
+      margin: auto
+      max-width: 170px
+
+@media (max-width: 1200px)
+   .steps
+      &__item
+         margin: 20px auto
+         flex-basis: 33%
+         &:before
+            display: none
+      &__title
+         margin: 10px auto
+
+@media (max-width: 768px)
+   .steps
+      &__item
+         flex-basis: 50%
+
+@media (max-width: 480px)
+   .steps
+      &__item
+         flex-basis: 100%
+
