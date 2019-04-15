@@ -1,0 +1,55 @@
+.blog
+   &__heading
+      display: flex
+      justify-content: space-between
+      align-items: center
+      margin-bottom: 40px
+   &__title
+      font-size: 22px
+   &__list
+      display: flex
+      justify-content: space-between
+      align-items: center
+   &__item
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08)
+      margin-bottom: 30px
+      &:hover
+         box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15)
+         cursor: pointer
+   &__text
+      margin: 30px auto
+      text-align: center
+      font-size: 18px
+
+@media (max-width: 1200px)
+   .blog
+      &__list
+         flex-wrap: wrap
+         justify-content: space-around
+      &__item
+         margin: 0 90px
+         margin-bottom: 50px
+
+@media (max-width: 992px)
+   .blog
+      &__item
+         margin: 0 40px
+         margin-bottom: 50px
+         
+@media (max-width: 768px)
+   .blog
+      &__heading
+         display: block
+         text-align: center
+      &__item
+         margin: 0 10px
+         margin-bottom: 40px
+         
+@media (max-width: 768px)
+   .blog
+      &__item
+         max-width: 80%
+         &:last-child
+            margin-bottom: 0
+      &__text
+         margin: 15px auto
