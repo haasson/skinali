@@ -63,6 +63,7 @@ img {
   color: #ffffff;
   font-family: 'Proxima Nova Semibold', sans-serif;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .form__checkbox input[type="checkbox"] {
@@ -969,5 +970,69 @@ img {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
   }
+}
+
+.reviews {
+  background-color: #f7f4ed;
+}
+
+.reviews__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.reviews__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-preferred-size: 27%;
+      flex-basis: 27%;
+}
+
+.reviews__text {
+  position: relative;
+  margin-bottom: 40px;
+  padding: 20px;
+  text-align: center;
+  font-style: italic;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.reviews__text p {
+  margin: 0;
+}
+
+.reviews__text:before {
+  position: absolute;
+  content: "";
+  bottom: -24%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border: 20px solid transparent;
+  border-top: 20px solid white;
+}
+
+.reviews__image {
+  border-radius: 50%;
+}
+
+.reviews__name {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 18px;
+  font-family: 'Proxima Nova Semibold', sans-serif;
 }
 /*# sourceMappingURL=style.css.map */

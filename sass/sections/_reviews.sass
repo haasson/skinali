@@ -1,0 +1,35 @@
+.reviews
+   background-color: $bg-secondary
+   &__list
+      display: flex
+      justify-content: space-between
+   &__item
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      flex-basis: 27%
+   &__text
+      position: relative
+      margin-bottom: 40px
+      padding: 20px
+      text-align: center
+      font-style: italic
+      background-color: #fff
+      border-radius: 10px
+      & p
+         margin: 0
+      &:before
+         position: absolute
+         content: ""
+         bottom: -24%
+         left: 50%
+         transform: translateX(-50%)
+         border: 20px solid transparent	
+         border-top: 20px solid white
+   &__image
+      border-radius: 50%
+   &__name
+      margin-top: 25px
+      text-align: center
+      font-size: 18px
+      +bold
