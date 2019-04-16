@@ -3,6 +3,8 @@
    min-height: 400px
    padding-bottom: 130px
    background-color: $bg-secondary
+   &_bg-white
+      background-color: #fff
    &__block
       box-sizing: border-box
       position: absolute
@@ -10,8 +12,11 @@
       width: 95%
       max-width: 1170px
       padding: 80px
-      background: #fff url('../img/offer/bg-form.jpg') no-repeat center right
+      background: #fff url('../img/offer/bg-form-calc.jpg') no-repeat center right
       background-size: contain
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08)
+      &_price
+         background: #fff url('../img/offer/bg-form-price.jpg') no-repeat center right
    &__title
       font-size: 25px
       text-transform: uppercase
@@ -19,6 +24,7 @@
    &__subtitle
       display: block
       margin-bottom: 45px
+      max-width: 770px
       font-size: 20px
 
 .form
@@ -43,8 +49,13 @@
       border: 1px solid #dddddd
       border-right: none
    &__button
+      display: inline-block
       height: 80px
       width: 100%
+      &_price
+         padding: 20px
+   &__span
+      margin-left: 20px
    &__row:first-child .form__group:last-child .form__input, &__row:last-child .form__group:nth-child(2) .form__input
       border-right: 1px solid #dddddd
 
@@ -55,6 +66,8 @@
          width: 95%
          padding: 60px
          background-position: center right -60px
+      &__subtitle
+         max-width: 600px
 
 @media (max-width: 992px)
    .offer
@@ -70,14 +83,15 @@
    .form
       &__input
          height: 60px
-      &__row:last-child
-         flex-wrap: wrap
-         justify-content: center
-         & .form
-            &__group
-               flex-basis: 50%
-            &__input
-               margin-bottom: 20px
+      &__row
+         &_last
+            flex-wrap: wrap
+            justify-content: center
+            & .form
+               &__group
+                  flex-basis: 50%
+               &__input
+                  margin-bottom: 20px
 
 @media (max-width: 768px)
    .offer
@@ -95,6 +109,11 @@
       &__row
          flex-direction: column
          align-items: stretch
+         &_last
+            & .form
+               &__group
+                  flex-basis: 100%
+                  text-align: center
          &:nth-child(2)
             flex-direction: row
             margin-bottom: 35px
@@ -103,3 +122,5 @@
          margin-bottom: 15px
       &__input
          border: 1px solid #dddddd
+      &__span
+         margin-left: 0
