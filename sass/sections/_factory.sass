@@ -1,0 +1,28 @@
+.factory
+   &__block 
+      display: flex
+      justify-content: center
+      align-items: flex-start
+   &__image
+      margin: 0
+      margin-top: 20px
+   &__description
+      flex-basis: 40%
+      margin-left: 40px
+      font-size: 18px
+
+@media (max-width: 992px)
+   .factory
+      &__description
+         font-size: 16px
+
+@media (max-width: 768px)
+   .factory
+      &__block
+         flex-direction: column
+      &__image
+         margin: auto
+         max-width: 90%
+      &__description
+         margin: 20px
+         font-size: 16px

@@ -5,6 +5,7 @@
    background-color: $bg-secondary
    &_bg-white
       background-color: #fff
+      padding-bottom: 0
    &__block
       box-sizing: border-box
       position: absolute
@@ -52,6 +53,7 @@
       display: inline-block
       height: 80px
       width: 100%
+      white-space: pre-line
       &_price
          padding: 20px
    &__span
@@ -84,9 +86,15 @@
       &__input
          height: 60px
       &__row
-         &_last
+         &:nth-child(3)
             flex-wrap: wrap
             justify-content: center
+            & .form
+               &__group
+                  flex-basis: 50%
+               &__input
+                  margin-bottom: 20px
+         &_last
             & .form
                &__group
                   flex-basis: 50%
@@ -109,14 +117,16 @@
       &__row
          flex-direction: column
          align-items: stretch
+         &_checkbox
+            flex-direction: row
+            margin-bottom: 35px
+            font-size: 15px
          &_last
+            flex-direction: column
             & .form
                &__group
                   flex-basis: 100%
                   text-align: center
-         &:nth-child(2)
-            flex-direction: row
-            margin-bottom: 35px
       &__group
          flex-basis: 100%
          margin-bottom: 15px
