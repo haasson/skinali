@@ -1570,7 +1570,6 @@ h3 {
   z-index: 99;
   margin: auto;
   max-width: 640px;
-  max-height: 400px;
 }
 
 .before__slider-arrows {
@@ -1657,6 +1656,13 @@ h3 {
 }
 
 @media (max-width: 768px) {
+  .before {
+    padding-bottom: auto;
+  }
+  .before__wrap {
+    width: 90%;
+    height: auto;
+  }
   .before__slider-arrows {
     display: none;
   }
