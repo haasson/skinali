@@ -1,11 +1,10 @@
 .before
-   padding-bottom: 200px
    &__wrap
       position: relative
       z-index: 99
       margin: auto
-      width: 640px
-      height: 400px
+      max-width: 640px
+      max-height: 400px
    &__slider
       &-arrows
          position: absolute
@@ -54,4 +53,13 @@
       &:hover
          border-color: #aaa
       
-      
+@media (max-width: 768px)
+   .before
+      &__slider
+         &-arrows
+            display: none
+         &-dots
+            li
+               height: 15px   
+               width: 15px
+               margin: 20px
