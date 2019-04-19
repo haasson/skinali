@@ -8,6 +8,10 @@
       position: relative
       max-width: 550px
       margin: 5px
+      &:hover
+         .catalog__buttons
+            display: flex
+            transform: scale(1, 1)
    &__tag
       position: absolute
       top: 10px
@@ -24,21 +28,34 @@
       right: 0
       bottom: 0
       opacity: 0.9
+      transition: 0.1s
+      transform: scale(1, 0)
+      transform-origin: (50% 100%)
    &__button
       padding: 10px
       text-transform: uppercase
       border: none
       outline: none
       font-size: 14px
+      cursor: pointer
       +bold
       &_fitting
          background-color: #fff
          color: $primary
+         &:hover
+            color: darken($primary, 30%)
       &_order
          background-color: lighten($primary, 10%)
          color: #ffffff
+         &:hover
+            background-color: $primary
+            transition: 0.3s
       &_like
          background-color: $primary
+         &:hover
+            background-color: darken($primary, 5%)
+            transition: 0.3s
+         
 
 @media (max-width: 1200px)
    .catalog

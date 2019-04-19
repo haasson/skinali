@@ -21,6 +21,7 @@ h3
       +bold
 
 .button-o
+   box-sizing: border-box
    padding: 17px 22px
    border: 2px solid $primary
    background-color: transparent
@@ -28,6 +29,14 @@ h3
    color: $primary
    +bold
    text-transform: uppercase
+   cursor: pointer
+   outline: none
+   &:hover
+      background-color: $primary
+      color: #fff
+      transition: 0.3s
+   &:active
+      background-color: darken($primary, 3%)
 
 .button
    padding: 20px 45px
@@ -38,6 +47,12 @@ h3
    +bold
    text-transform: uppercase
    cursor: pointer
+   outline: none
+   &:hover
+      background-color: darken($primary, 4%)
+      transition: 0.3s
+   &:active
+      background-color: darken($primary, 7%)
 
 .form__checkbox 
    & input[type="checkbox"]

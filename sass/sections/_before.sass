@@ -1,0 +1,57 @@
+.before
+   padding-bottom: 200px
+   &__wrap
+      position: relative
+      z-index: 99
+      margin: auto
+      width: 640px
+      height: 400px
+   &__slider
+      &-arrows
+         position: absolute
+         z-index: -10
+         display: flex
+         justify-content: space-between
+         top: 50%
+         width: 100%
+         transform: translateY(-100%)
+      &-dots
+         display: flex
+         justify-content: center
+         padding: 0
+         list-style: none
+         li
+            box-sizing: border-box
+            width: 10px
+            height: 10px
+            margin: auto 10px
+            background-color: #ccc
+            border-radius: 50%
+            &.slick-active
+               background-color: $primary
+      button
+         display: none
+.arrow
+   background: none
+   border: none
+   outline: none
+   cursor: pointer
+   &-right
+      transform: translateX(100%)
+      &_symbol
+         transform: rotate(45deg)
+   &-left
+      transform: translateX(-100%)
+      &_symbol
+         transform: rotate(-135deg)
+   &_symbol
+      display: block
+      height: 30px
+      width: 30px
+      border: 
+         right: 3px solid #ccc
+         top: 3px solid #ccc
+      &:hover
+         border-color: #aaa
+      
+      

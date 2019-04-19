@@ -4,7 +4,8 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>Skinali</title>
+	<title>Skinali</title>
+	<link rel="stylesheet" href="css/twentytwenty.css" type="text/css" media="screen" />
    <link rel="stylesheet" href="css/normalize.css">
    <link rel="stylesheet" href="css/style.css">
 </head>
@@ -28,10 +29,8 @@
          <div class="container">
             <div class="navbar__wrap">
                <!-- Меню -->
-               <button class="navbar__menu-button">
-                  <span class="navbar__menu-button_line"></span>
-                  <span class="navbar__menu-button_line"></span>
-                  <span class="navbar__menu-button_line"></span>
+               <button class="navbar__menu-button ">
+                  <span></span>
                </button>
 					<!-- Лого -->
 					<div class="navbar__logo">
@@ -466,6 +465,48 @@
 			</div>
 		</section>
 
+		<section class="before section">
+			<div class="container">
+				<h2 class="section-title">До и после</h2>
+				<div class="before__wrap">
+					<div class="before__slider">
+						<div class="before__slider-item">
+							<div class="before__box">
+								<!-- The before image is first -->
+								<img src="img/before-after/sample-before.png" />
+								<!-- The after image is last -->
+								<img src="img/before-after/sample-after.png" />
+							</div>
+						</div>
+						<div class="before__slider-item">
+							<div class="before__box">
+								<!-- The before image is first -->
+								<img src="img/before-after/sample-before.png" />
+								<!-- The after image is last -->
+								<img src="img/before-after/sample-after.png" />
+							</div>
+						</div>
+						<div class="before__slider-item">
+							<div class="before__box">
+								<!-- The before image is first -->
+								<img src="img/before-after/sample-before.png" />
+								<!-- The after image is last -->
+								<img src="img/before-after/sample-after.png" />
+							</div>
+						</div>
+					</div>
+					<div class="before__slider-arrows">
+						<button class="arrow arrow-left">
+							<span class="arrow_symbol arrow-left_symbol"></span>
+						</button>
+						<button class="arrow arrow-right">
+							<span class="arrow_symbol arrow-right_symbol"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<!-- <section class="reviews section">
 			<div class="container">
 				<h2 class="section-title">
@@ -637,7 +678,12 @@
 	</footer>
 
 
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="js/jquery.event.move.js"></script>
+	<script src="js/jquery.twentytwenty.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/main.js"></script>
+	
 	<!-- Скрипт spikmi -->
 	<!-- <script type="text/javascript" src="https://spikmi.com/Widget?Id=617"></script> -->
 </body>
