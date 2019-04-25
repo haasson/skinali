@@ -49,6 +49,7 @@
       padding: 0 20px
       border: 1px solid #dddddd
       border-right: none
+   
    &__button
       display: inline-block
       height: 80px
@@ -60,6 +61,68 @@
       margin-left: 20px
    &__row:first-child .form__group:last-child .form__input, &__row:last-child .form__group:nth-child(2) .form__input
       border-right: 1px solid #dddddd
+.select
+   position: relative
+   box-sizing: border-box
+   height: 80px
+   width: 100%
+   padding: 0
+   border: 1px solid #dddddd
+   border-right: none
+   &__caret
+      position: absolute
+      right: 5%
+      top: 30%
+      transform: rotate(45deg)
+      transition: 0.2s
+      display: block
+      width: 15px
+      height: 15px
+      border-right: 3px solid #dddddd
+      border-bottom: 3px solid #dddddd
+      &-active
+         top: 40%
+         transform: rotate(225deg)
+         transition: 0.2s
+         border-right: 3px solid $primary
+         border-bottom: 3px solid $primary
+   &:hover
+      & .select__caret
+         border-right: 3px solid $primary
+         border-bottom: 3px solid $primary
+   &__checked
+      box-sizing: border-box
+      display: flex
+      justify-content: flex-start
+      align-items: center
+      height: 100%
+      width: 100%
+      padding: 0 20px
+   &__dropdown
+      display: block
+      position: absolute
+      z-index: 10
+      box-sizing: border-box
+      margin: 0
+      padding: 0
+      left: -1px
+      top: 78px
+      width: calc(100% + 2px)
+      list-style: none
+      background-color: #fff
+      border: 1px solid #dddddd
+      transform: scaley(0)
+      transform-origin: top
+      transition: 0.2s
+      &-active
+         transform: scaley(1)
+         transition: 0.2s
+
+   &__option
+      padding: 20px
+      &:hover
+         background-color: $primary
+         color: #fff
 
 @media (max-width: 1200px)
    .offer
@@ -83,7 +146,7 @@
          width: 90%
          background-image: none
    .form
-      &__input
+      &__input, &__select
          height: 60px
       &__row
          &:nth-child(3)
@@ -100,6 +163,14 @@
                   flex-basis: 50%
                &__input
                   margin-bottom: 20px
+   .select
+      &__caret
+         width: 10px
+         height: 10px
+      &__dropdown
+         top: 58px
+
+
 
 @media (max-width: 768px)
    .offer
@@ -130,7 +201,7 @@
       &__group
          flex-basis: 100%
          margin-bottom: 15px
-      &__input
+      &__input, &__select
          border: 1px solid #dddddd
       &__span
          margin-left: 0

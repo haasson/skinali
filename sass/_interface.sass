@@ -8,9 +8,18 @@ img
    margin: auto
    max-width: 100%
 
+h1, h2, h3
+   &:before
+      content: ''
+      display: block
+      height: 5em
+      width: 100%
+      margin-top: -5em
+      visibility: hidden
+      
 h3
    font-size: 22px
-
+   
 .section
    padding: 90px 0
    &-title
@@ -110,3 +119,7 @@ h3
       &-title
          margin-bottom: 40px
          font-size: 24px
+   h1, h2, h3
+      &:before
+         height: 2em
+         margin-top: -2em

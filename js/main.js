@@ -13,6 +13,18 @@ for (let i = 0; i < likeButtons.length; i++) {
 let reviewsSlider = document.querySelector('.reviews__list')
 window.onresize = changeReviewsType;
 
+let select = document.querySelector('.select__checked');
+let dropdown = document.querySelector('.select__dropdown');
+let value = document.querySelector('#select-type');
+let caret = document.querySelector('.select__caret');
+
+select.addEventListener('mouseup', toggleSelect);
+
+let options = document.querySelectorAll('.select__option');
+for (let i = 0; i < options.length; i++) {
+   chooseOption(options[i]);
+}
+
 
 // jQuery plugins
 
@@ -36,13 +48,14 @@ $(window).on("load", function () {
    $('.reviews__slider').slick({
       dots: true,
       dotsClass: 'reviews__slider-dots',
-      prevArrow: $('.arrow-left'),
-      nextArrow: $('.arrow-right'),
+      prevArrow: $('.reviews__arrow-left'),
+      nextArrow: $('.reviews__arrow-right'),
       
    })
 
 
 })
+
 
 function likeHandler(likeButton) {
    likeButton.addEventListener('click', function () {
@@ -57,4 +70,36 @@ function changeReviewsType() {
    else {
       reviewsSlider.classList.remove('reviews__slider');
    }
+}
+
+function chooseOption(option) {
+   option.addEventListener('click', function () {
+      dropdown.classList.toggle('select__dropdown-active');
+      caret.classList.toggle('select__caret-active');
+      value.value = option.getAttribute('data-value');
+      select.innerHTML = value.value;
+
+   })
+}
+
+function toggleSelect() {
+      dropdown.classList.toggle('select__dropdown-active');
+      caret.classList.toggle('select__caret-active');
+}
+
+
+
+const anchors = document.querySelectorAll('a[href*="#"]')
+
+for (let anchor of anchors) {
+   anchor.addEventListener('click', function (e) {
+      e.preventDefault()
+
+      const blockID = anchor.getAttribute('href')
+
+      document.querySelector('' + blockID).scrollIntoView({
+         behavior: 'smooth',
+         block: 'start'
+      })
+   })
 }

@@ -17,13 +17,13 @@
 			<div class="menu">
 				<div class="container">
 					<nav class="menu__nav">
-						<a href="#" class="menu__link">Главная</a>
-						<a href="#" class="menu__link">Продукция</a>
-						<a href="#" class="menu__link">Каталог</a>
-						<a href="#" class="menu__link">Примеры работ</a>
-						<a href="#" class="menu__link">Примерка изображений</a>
-						<a href="#" class="menu__link">Стоимость дилеров</a>
-						<a href="#" class="menu__link">О скинали</a>
+						<a href="#hero" class="menu__link">Главная</a>
+						<a href="#features" class="menu__link">Преимущества</a>
+						<a href="#catalog" class="menu__link">Каталог</a>
+						<a href="#blog" class="menu__link">О скинали</a>
+						<a href="#price" class="menu__link">Цены и виды</a>
+						<a href="#reviews" class="menu__link">Отзывы</a>
+						<a href="#contacts" class="menu__link">Контакты</a>
 					</nav>
 				</div>
 			</div>
@@ -69,7 +69,7 @@
       <div class="hero">
          <div class="container">
 				<div class="hero__wrapper">
-					<h1 class="hero__title">
+					<h1 class="hero__title" id="hero">
 						Гарантия минимальной цены на скинали
 					</h1>
 					<span class="hero__subtitle">
@@ -95,16 +95,23 @@
 					</span>
 					<form action="" class="form offer__form">
 						<div class="form__row">
+
 							<div class="form__group">
 								<label for="" class="form__label">
 									Вид стекла
 								</label>
-								<select class="input form__input">
-									<option value="">Первое</option>
-									<option value="">Второе</option>
-									<option value="">Третье</option>
-								</select>
+								<input type="hidden" id="select-type" name="type" value="С печатью">
+								<div class="select form__select">
+									<div class="select__checked">Выбрать</div>
+									<ul class="select__dropdown">
+										<li class="select__option" data-value="С печатью">С печатью</li>
+										<li class="select__option" data-value="Без печати">Без печати</li>
+										<li class="select__option" data-value="Закаленное">Закаленное</li>
+									</ul>
+									<div class="select__caret"></div>
+								</div>
 							</div>
+
 							<div class="form__group">
 								<label for="" class="form__label">
 									Ширина, см
@@ -150,7 +157,7 @@
 
 		<section class="features section">
 			<div class="container">
-				<h2 class="section-title">
+				<h2 class="section-title" id="features">
 					Наши преимущества
 				</h2>
 				<div class="features__wrap">
@@ -184,7 +191,7 @@
 
 		<section class="catalog section">
 			<div class="container">
-				<h2 class="section-title">
+				<h2 class="section-title" id="catalog">
 					Каталог
 				</h2>
 				<div class="catalog__cards">
@@ -300,7 +307,7 @@
 		<section class="blog section">
 			<div class="container">
 				<div class="blog__heading">
-					<h3 class="blog__title">
+					<h3 class="blog__title" id="blog">
 						Полезное, или что важно знать о скинали
 					</h3>
 					<a href="#">Читать все статьи</a>
@@ -328,7 +335,7 @@
 
 		<section class="price section">
 			<div class="container">
-				<h2 class="section-title">
+				<h2 class="section-title" id="price">
 					Цены и виды скинали
 				</h2>
 				<div class="price__list">
@@ -514,7 +521,7 @@
 
 		<section class="reviews section">
 			<div class="container">
-				<h2 class="section-title">
+				<h2 class="section-title" id="reviews">
 					Отзывы
 				</h2>
 				<div class="reviews__wrap">
@@ -557,7 +564,7 @@
 						<button class="reviews__arrow reviews__arrow-left">
 							<span class="reviews__arrow_symbol reviews__arrow-left_symbol"></span>
 						</button>
-						<button class="reviews__arrow arrow-right">
+						<button class="reviews__arrow reviews__arrow-right">
 							<span class="reviews__arrow_symbol reviews__arrow-right_symbol"></span>
 						</button>
 					</div>
@@ -621,7 +628,7 @@
 
 		<section class="contacts section">
 			<div class="container">
-				<h2 class="section-title">
+				<h2 class="section-title" id="contacts">
 					Контакты
 				</h2>
 				<div class="contacts__list">
