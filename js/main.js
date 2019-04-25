@@ -25,6 +25,13 @@ for (let i = 0; i < options.length; i++) {
    chooseOption(options[i]);
 }
 
+let reviewsBlock = document.querySelector('.reviews');
+let mapBlock = document.querySelector('.contacts__map');
+let mapScript = document.createElement('script');
+
+
+window.addEventListener('scroll', getReviewsCoordinates)
+
 
 // jQuery plugins
 
@@ -56,6 +63,16 @@ $(window).on("load", function () {
 
 })
 
+
+function getReviewsCoordinates() {
+      if (reviewsBlock.getBoundingClientRect().top < 0) {
+         window.removeEventListener('scroll', getReviewsCoordinates);
+         console.log('Гружу карту');
+         
+         mapScript.setAttribute('src', 'https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Addab9bf9b5617bf931ed0cd15bdd0a5a96dc4bbd227c49a6d319ccd7bc61b403&amp;width=100%25&amp;height=410&amp;lang=ru_RU&amp;scroll=false');
+         mapBlock.appendChild(mapScript);
+      }
+}
 
 function likeHandler(likeButton) {
    likeButton.addEventListener('click', function () {
