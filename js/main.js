@@ -1,10 +1,7 @@
 // Кнопка Меню
 var menuButton = document.querySelector(".navbar__menu-button");
 var menuList = document.querySelector('.menu');
-menuButton.addEventListener('click', function(){
-   menuList.classList.toggle('menu__active');
-   menuButton.classList.toggle('navbar__menu-button_active')
-})
+menuButton.addEventListener('click', toggleMenu)
 
 // Кнопки лайк
 var likeButtons = document.querySelectorAll('.catalog__button_like');
@@ -42,7 +39,14 @@ for (let i = 0; i < anchors.length; i++) {
    setAnchor(anchors[i])
 }
 
-
+// Плавная прокрутка к началу страницы на мобильных
+let float = document.querySelector('.float');
+float.addEventListener('click', function () {
+   window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+   });
+})
 
 // ---------------  jQuery plugins ------------
 
@@ -75,7 +79,14 @@ $(window).on("load", function () {
    })
 })
 
+
+
 // ------------ Объявления функций --------------
+
+function toggleMenu() {
+      menuList.classList.toggle('menu__active');
+      menuButton.classList.toggle('navbar__menu-button_active');
+}
 
 function likeHandler(likeButton) {
    likeButton.addEventListener('click', function () {
@@ -121,12 +132,21 @@ function setAnchor(anchor) {
       e.preventDefault();
       let blockName = anchor.getAttribute('href');
       let block = document.querySelector(blockName);
-      console.log(getCoords(block).top);
-   
-      window.scrollTo({
-         top: getCoords(block).top - 80,
-         behavior: 'smooth'
-      });
+      
+      if (document.body.clientWidth < 768) {
+         window.scrollTo({
+            top: getCoords(block).top,
+            behavior: 'smooth'
+         });
+         toggleMenu();
+      }
+      else {
+         window.scrollTo({
+            top: getCoords(block).top - 80,
+            behavior: 'smooth'
+         });
+      }
+      
    }); 
 }
 

@@ -29,6 +29,28 @@ h3
       font-size: 30px
       +bold
 
+.main 
+   position: relative
+
+.float
+   display: none
+   position: fixed
+   bottom: 2%
+   left: 5%
+   width: 40px
+   height: 40px
+   background-color: rgba($primary, 0.5)
+   border-radius: 50%
+   &__symbol
+      position: absolute
+      left: 29%
+      top: 40%
+      height: 15px
+      width: 15px
+      border-left: 3px solid white
+      border-bottom: 3px solid white
+      transform: rotate(135deg) 
+
 .button-o
    box-sizing: border-box
    padding: 17px 22px
@@ -119,7 +141,5 @@ h3
       &-title
          margin-bottom: 40px
          font-size: 24px
-   h1, h2, h3
-      &:before
-         height: 2em
-         margin-top: -2em
+   .float
+      display: block
