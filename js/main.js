@@ -1,3 +1,4 @@
+// Кнопка Меню
 var menuButton = document.querySelector(".navbar__menu-button");
 var menuList = document.querySelector('.menu');
 menuButton.addEventListener('click', function(){
@@ -5,14 +6,17 @@ menuButton.addEventListener('click', function(){
    menuButton.classList.toggle('navbar__menu-button_active')
 })
 
+// Кнопки лайк
 var likeButtons = document.querySelectorAll('.catalog__button_like');
 for (let i = 0; i < likeButtons.length; i++) {
    likeHandler(likeButtons[i])
 }
    
+// Слайдер отзывов
 let reviewsSlider = document.querySelector('.reviews__list')
 window.onresize = changeReviewsType;
 
+// Селект формы
 let select = document.querySelector('.select__checked');
 let dropdown = document.querySelector('.select__dropdown');
 let value = document.querySelector('#select-type');
@@ -25,17 +29,25 @@ for (let i = 0; i < options.length; i++) {
    chooseOption(options[i]);
 }
 
+// Подгрузка карты
 let reviewsBlock = document.querySelector('.reviews');
 let mapBlock = document.querySelector('.contacts__map');
 let mapScript = document.createElement('script');
 
-
 window.addEventListener('scroll', getReviewsCoordinates)
 
+// Плавная прокрутка к разделам
+let anchors = document.querySelectorAll('a[href^="#"]');
+for (let i = 0; i < anchors.length; i++) {
+   setAnchor(anchors[i])
+}
 
-// jQuery plugins
+
+
+// ---------------  jQuery plugins ------------
 
 $(window).on("load", function () {
+   // 20-20 слайдер
    $(".before__box").twentytwenty({
       default_offset_pct: 0.3,
       move_with_handle_only: true,
@@ -43,6 +55,7 @@ $(window).on("load", function () {
       after_label: 'Со скинали',
    });
 
+   // Слайдер раздера До-после
    $('.before__slider').slick({
       draggable: false,
       swipe: false,
@@ -52,6 +65,7 @@ $(window).on("load", function () {
       nextArrow: $('.arrow-right')
    })
 
+   // Слайдер блока отзывов
    $('.reviews__slider').slick({
       dots: true,
       dotsClass: 'reviews__slider-dots',
@@ -59,20 +73,9 @@ $(window).on("load", function () {
       nextArrow: $('.reviews__arrow-right'),
       
    })
-
-
 })
 
-
-function getReviewsCoordinates() {
-      if (reviewsBlock.getBoundingClientRect().top < 0) {
-         window.removeEventListener('scroll', getReviewsCoordinates);
-         console.log('Гружу карту');
-         
-         mapScript.setAttribute('src', 'https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Addab9bf9b5617bf931ed0cd15bdd0a5a96dc4bbd227c49a6d319ccd7bc61b403&amp;width=100%25&amp;height=410&amp;lang=ru_RU&amp;scroll=false');
-         mapBlock.appendChild(mapScript);
-      }
-}
+// ------------ Объявления функций --------------
 
 function likeHandler(likeButton) {
    likeButton.addEventListener('click', function () {
@@ -104,19 +107,33 @@ function toggleSelect() {
       caret.classList.toggle('select__caret-active');
 }
 
+function getReviewsCoordinates() {
+      if (reviewsBlock.getBoundingClientRect().top < 0) {
+         window.removeEventListener('scroll', getReviewsCoordinates);
 
+         mapScript.setAttribute('src', 'https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Addab9bf9b5617bf931ed0cd15bdd0a5a96dc4bbd227c49a6d319ccd7bc61b403&amp;width=100%25&amp;height=410&amp;lang=ru_RU&amp;scroll=false');
+         mapBlock.appendChild(mapScript);
+      }
+}
 
-const anchors = document.querySelectorAll('a[href*="#"]')
-
-for (let anchor of anchors) {
+function setAnchor(anchor) {
    anchor.addEventListener('click', function (e) {
-      e.preventDefault()
+      e.preventDefault();
+      let blockName = anchor.getAttribute('href');
+      let block = document.querySelector(blockName);
+      console.log(getCoords(block).top);
+   
+      window.scrollTo({
+         top: getCoords(block).top - 80,
+         behavior: 'smooth'
+      });
+   }); 
+}
 
-      const blockID = anchor.getAttribute('href')
-
-      document.querySelector('' + blockID).scrollIntoView({
-         behavior: 'smooth',
-         block: 'start'
-      })
-   })
+function getCoords(elem) {
+   var box = elem.getBoundingClientRect();
+   return {
+      top: box.top + pageYOffset,
+      left: box.left + pageXOffset
+   }
 }
