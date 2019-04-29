@@ -83,17 +83,20 @@ $(window).on("load", function () {
 
 // ------------ Объявления функций --------------
 
+// Переключение класса меню
 function toggleMenu() {
       menuList.classList.toggle('menu__active');
       menuButton.classList.toggle('navbar__menu-button_active');
 }
 
+// Обработчик лайков 
 function likeHandler(likeButton) {
    likeButton.addEventListener('click', function () {
       likeButton.innerHTML = '<img src="img/catalog/heart-active.png" alt=""></img>'
    })
 }
 
+// Изменение вида блока отзывов в зависимости от разрешения экрана
 function changeReviewsType() {
    if (document.body.clientWidth < 768) {
       reviewsSlider.classList.add('reviews__slider');
@@ -103,6 +106,7 @@ function changeReviewsType() {
    }
 }
 
+// Обработчик кликов по опциям в селекте формы
 function chooseOption(option) {
    option.addEventListener('click', function () {
       dropdown.classList.toggle('select__dropdown-active');
@@ -113,11 +117,13 @@ function chooseOption(option) {
    })
 }
 
+// Переключение класса дропдауна селекта
 function toggleSelect() {
       dropdown.classList.toggle('select__dropdown-active');
       caret.classList.toggle('select__caret-active');
 }
 
+// Подгрузка карты если доскроллили до блока отзывов
 function getReviewsCoordinates() {
       if (reviewsBlock.getBoundingClientRect().top < 0) {
          window.removeEventListener('scroll', getReviewsCoordinates);
@@ -127,6 +133,7 @@ function getReviewsCoordinates() {
       }
 }
 
+// Плавная прокрутка к блокам
 function setAnchor(anchor) {
    anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -150,6 +157,7 @@ function setAnchor(anchor) {
    }); 
 }
 
+// Получение абсолютных координат элемента страницы
 function getCoords(elem) {
    var box = elem.getBoundingClientRect();
    return {

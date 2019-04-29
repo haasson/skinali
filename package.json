@@ -1,0 +1,27 @@
+{
+  "name": "Skinali",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haasson/skinali.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haasson/skinali/issues"
+  },
+  "homepage": "https://github.com/haasson/skinali#readme",
+  "dependencies": {
+    "gulp-tinypng-compress": "^1.2.1",
+    "tinypng-compress": "^1.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.1"
+  }
+}
